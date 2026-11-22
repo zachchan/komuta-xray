@@ -1,0 +1,24 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [
+    {
+      "port": ${PORT},
+      "listen": "0.0.0.0",
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          { "id": "22538b67-d7e6-4e53-a0d4-327a9b756eae", "flow": "" }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": { "path": "/vless" }
+      }
+    }
+  ],
+  "outbounds": [
+    { "protocol": "freedom", "tag": "direct" },
+    { "protocol": "blackhole", "tag": "blocked" }
+  ]
+}
